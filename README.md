@@ -35,39 +35,12 @@ define a kustomization file that specifies your patch.
 ```console
 cat <<EOF >$DEMO_HOME/kustomization.yaml
 resources:
-- github.com/ffosyal/nfs-client-provisioner/resources
-vars:
-- name: NFS_SERVER
-objref:
-  apiVersion: v1
-  kind: ConfigMap
-  name: nfs-provisioner-client-info
-fieldref:
-  fieldpath: data.nfsServer
-- name: NFS_PATH
-objref:
-  apiVersion: v1
-  kind: ConfigMap
-  name: nfs-provisioner-client-info
-fieldref:
-  fieldpath: data.nfsPath
-configurations:
-- varreference.yaml
+- github.com/ffoysal/nfs-client-provisioner
 patches:
 - path: patch.yaml
-target:
-  kind: ConfigMap
-  name: nfs-provisioner-client-info
-EOF
-```
-
- create varreference file. it is needed because kustomize does last mile var substituition.
-
-```console
-cat <<EOF >$DEMO_HOME/varreference.yaml
-varReference:
-- path: spec/template/spec/volumes/nfs/path
-kind: Deployment
+  target:
+    kind: ConfigMap
+    name: nfs-provisioner-client-info
 EOF
 ```
 
