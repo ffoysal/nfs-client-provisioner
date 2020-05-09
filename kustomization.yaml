@@ -18,8 +18,3 @@ vars:
     fieldpath: data.nfsPath
 configurations:
 - varreference.yaml
-patches:
-- path: patch.yaml
-  target:
-    kind: ConfigMap
-    name: nfs-provisioner-client-info
