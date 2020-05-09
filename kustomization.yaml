@@ -1,0 +1,25 @@
+
+resources:
+- resources
+vars:
+- name: NFS_SERVER
+  objref:
+    apiVersion: v1
+    kind: ConfigMap
+    name: nfs-provisioner-client-info
+  fieldref:
+    fieldpath: data.nfsServer
+- name: NFS_PATH
+  objref:
+    apiVersion: v1
+    kind: ConfigMap
+    name: nfs-provisioner-client-info
+  fieldref:
+    fieldpath: data.nfsPath
+configurations:
+- varreference.yaml
+patches:
+- path: patch.yaml
+  target:
+    kind: ConfigMap
+    name: nfs-provisioner-client-info
