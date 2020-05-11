@@ -7,7 +7,7 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: nfs-client-provisioner
-    namespace: coffee
+    namespace: $(NAMESPACE)
 roleRef:
   kind: ClusterRole
   name: nfs-client-provisioner

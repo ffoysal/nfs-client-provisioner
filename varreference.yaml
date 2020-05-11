@@ -1,3 +1,5 @@
 varReference:
 - path: spec/template/spec/volumes/nfs/path
   kind: Deployment
+- path: subjects/namespace
+  kind: ClusterRoleBinding

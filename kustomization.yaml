@@ -1,4 +1,4 @@
-
+namespace: default
 resources:
 - resources
 vars:
@@ -16,5 +16,12 @@ vars:
     name: nfs-provisioner-client-info
   fieldref:
     fieldpath: data.nfsPath
+- name: NAMESPACE
+  objref:
+    apiVersion: v1
+    kind: ConfigMap
+    name: nfs-provisioner-client-info
+  fieldref:
+    fieldpath: metadata.namespace
 configurations:
 - varreference.yaml
