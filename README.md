@@ -47,7 +47,7 @@ EOF
 then run kustomize
 
 ```console
-kustomize build $DEMO_HOME
+kustomize build $DEMO_HOME | kubectl apply -f -
 ```
 
 ### Reference

@@ -27,7 +27,7 @@ spec:
               mountPath: /persistentvolumes
           env:
             - name: PROVISIONER_NAME
-              value: nfs-client-provisioner
+              value: gke.io/nfs-client-provisioner
             - name: NFS_SERVER
               value: $(NFS_SERVER)
             - name: NFS_PATH
