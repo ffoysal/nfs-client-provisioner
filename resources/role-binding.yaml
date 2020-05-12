@@ -4,8 +4,6 @@ metadata:
   labels:
     app: nfs-client-provisioner
     chart: nfs-client-provisioner-1.2.8
-    heritage: Tiller
-    release: nfs-foysal
   name: leader-locking-nfs-client-provisioner
 subjects:
   - kind: ServiceAccount
